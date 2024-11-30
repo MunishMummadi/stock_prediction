@@ -1,0 +1,36 @@
+# Model Configuration
+model:
+  algorithm: 'random_forest'
+  n_estimators: 100
+  random_state: 42
+  test_size: 0.2
+  target_column: 'Close'
+
+# Feature Engineering Parameters
+features:
+  sma_periods: [20, 50, 200]
+  rsi_period: 14
+  macd:
+    short_period: 12
+    long_period: 26
+    signal_period: 9
+
+# Data Parameters
+data:
+  ticker: 'AAPL'
+  start_date: '2020-01-01'
+  end_date: '2024-01-01'
+  train_test_split: 0.2
+
+# Visualization
+visualization:
+  style: 'seaborn'
+  figure_size: [12, 8]
+  dpi: 300
+  save_path: 'reports/figures/'
+
+# Logging
+logging:
+  level: 'INFO'
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  file: 'logs/stock_prediction.log'
